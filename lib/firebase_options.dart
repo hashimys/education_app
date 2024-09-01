@@ -2,7 +2,7 @@
 // ignore_for_file: lines_longer_than_80_chars, avoid_classes_with_only_static_members
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
-    show defaultTargetPlatform, kIsWeb, TargetPlatform;
+    show TargetPlatform, defaultTargetPlatform, kIsWeb;
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -50,20 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyB3axqEjJ_SxSKByhWf01samgNibenOju0',
-    appId: '1:1023427592847:android:4ac67c75c22ec034fa26fa',
-    messagingSenderId: '1023427592847',
-    projectId: 'education-app-73d7a',
-    storageBucket: 'education-app-73d7a.appspot.com',
+    apiKey: 'AIzaSyDQGk9LKrmb0Z5lqXGpajCUMs8TkRUoMYE',
+    appId: '1:82345376775:android:9590c0c7cc8c7c3a51bea2',
+    messagingSenderId: '82345376775',
+    projectId: 'education-app-8d22d',
+    storageBucket: 'education-app-8d22d.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAK8rWB9oS6GYCPzlJ1V5MMnmXaQ9ovg9Q',
-    appId: '1:1023427592847:ios:10b2d1aa021a99e3fa26fa',
-    messagingSenderId: '1023427592847',
-    projectId: 'education-app-73d7a',
-    storageBucket: 'education-app-73d7a.appspot.com',
-    iosBundleId: 'com.example.educationApp',
+    apiKey: 'AIzaSyB5OewkoTew0NvsibcoAP8WzPMWeEw0D6c',
+    appId: '1:82345376775:ios:2105835aad4a032551bea2',
+    messagingSenderId: '82345376775',
+    projectId: 'education-app-8d22d',
+    storageBucket: 'education-app-8d22d.appspot.com',
+    iosClientId: '82345376775-thpugduk7690h3g7q7kh4cpd3u4gron3.apps.googleusercontent.com',
+    iosBundleId: 'com.dbestech.educationApp',
   );
-
 }
