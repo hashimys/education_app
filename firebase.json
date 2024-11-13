@@ -1,1 +1,100 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"education-app-73d7a","appId":"1:1023427592847:android:4ac67c75c22ec034fa26fa","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"education-app-73d7a","appId":"1:1023427592847:ios:10b2d1aa021a99e3fa26fa","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"education-app-73d7a","configurations":{"android":"1:1023427592847:android:4ac67c75c22ec034fa26fa","ios":"1:1023427592847:ios:10b2d1aa021a99e3fa26fa"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "education-app-73d7a",
+          "appId": "1:1023427592847:android:4ac67c75c22ec034fa26fa",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "education-app-73d7a",
+          "appId": "1:1023427592847:ios:10b2d1aa021a99e3fa26fa",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "education-app-73d7a",
+          "configurations": {
+            "android": "1:1023427592847:android:4ac67c75c22ec034fa26fa",
+            "ios": "1:1023427592847:ios:10b2d1aa021a99e3fa26fa"
+          }
+        }
+      }
+    }
+  },
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "venv",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ]
+    }
+  ],
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "database": {
+      "port": 9000
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "pubsub": {
+      "port": 8085
+    },
+    "storage": {
+      "port": 9199
+    },
+    "eventarc": {
+      "port": 9299
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  },
+  "remoteconfig": {
+    "template": "remoteconfig.template.json"
+  },
+  "extensions": {}
+}
