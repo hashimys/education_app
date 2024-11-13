@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:education_app/core/common/features/course/data/datasources/course_remote_data_src.dart';
-import 'package:education_app/core/common/features/course/data/models/course_model.dart';
-import 'package:education_app/core/common/features/course/data/repos/course_repo_impl.dart';
-import 'package:education_app/core/common/features/course/domain/entities/course.dart';
 import 'package:education_app/core/errors/exceptions.dart';
 import 'package:education_app/core/errors/failures.dart';
+import 'package:education_app/src/course/data/datasources/course_remote_data_src.dart';
+import 'package:education_app/src/course/data/models/course_model.dart';
+import 'package:education_app/src/course/data/repos/course_repo_impl.dart';
+import 'package:education_app/src/course/domain/entities/course.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -60,9 +60,9 @@ void main() {
   group('getCourses', () {
     test(
       'should return [List<Course>] when call to remote source is successful',
-          () async {
+      () async {
         when(() => remoteDataSrc.getCourses()).thenAnswer(
-              (_) async => [tCourse],
+          (_) async => [tCourse],
         );
 
         final result = await repoImpl.getCourses();
@@ -76,8 +76,8 @@ void main() {
 
     test(
       'should return [ServerFailure] when call to remote source is '
-          'unsuccessful',
-          () async {
+      'unsuccessful',
+      () async {
         when(() => remoteDataSrc.getCourses()).thenThrow(tException);
 
         final result = await repoImpl.getCourses();
