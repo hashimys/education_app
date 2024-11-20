@@ -6,6 +6,115 @@ Future<void> init() async {
   await _initOnBoarding();
   await _initAuth();
   await _initCourse();
+  await _initVideo();
+  await _initMaterial();
+  await _initExam();
+  await _initNotifications();
+  await _initChat();
+}
+
+Future<void> _initChat() async {
+  sl
+    ..registerFactory(
+      () => ChatCubit(
+        getGroups: sl(),
+        getMessages: sl(),
+        getUserById: sl(),
+        joinGroup: sl(),
+        leaveGroup: sl(),
+        sendMessage: sl(),
+      ),
+    )
+    ..registerLazySingleton(() => GetGroups(sl()))
+    ..registerLazySingleton(() => GetMessages(sl()))
+    ..registerLazySingleton(() => GetUserById(sl()))
+    ..registerLazySingleton(() => JoinGroup(sl()))
+    ..registerLazySingleton(() => LeaveGroup(sl()))
+    ..registerLazySingleton(() => SendMessage(sl()))
+    ..registerLazySingleton<ChatRepo>(() => ChatRepoImpl(sl()))
+    ..registerLazySingleton<ChatRemoteDataSource>(
+      () => ChatRemoteDataSourceImpl(firestore: sl(), auth: sl()),
+    );
+}
+
+Future<void> _initNotifications() async {
+  sl
+    ..registerFactory(
+      () => NotificationCubit(
+        clear: sl(),
+        clearAll: sl(),
+        getNotifications: sl(),
+        markAsRead: sl(),
+        sendNotification: sl(),
+      ),
+    )
+    ..registerLazySingleton(() => Clear(sl()))
+    ..registerLazySingleton(() => ClearAll(sl()))
+    ..registerLazySingleton(() => GetNotifications(sl()))
+    ..registerLazySingleton(() => MarkAsRead(sl()))
+    ..registerLazySingleton(() => SendNotification(sl()))
+    ..registerLazySingleton<NotificationRepo>(() => NotificationRepoImpl(sl()))
+    ..registerLazySingleton<NotificationRemoteDataSrc>(
+      () => NotificationRemoteDataSrcImpl(firestore: sl(), auth: sl()),
+    );
+}
+
+Future<void> _initExam() async {
+  sl
+    ..registerFactory(
+      () => ExamCubit(
+        getExamQuestions: sl(),
+        getExams: sl(),
+        submitExam: sl(),
+        updateExam: sl(),
+        uploadExam: sl(),
+        getUserCourseExams: sl(),
+        getUserExams: sl(),
+      ),
+    )
+    ..registerLazySingleton(() => GetExamQuestions(sl()))
+    ..registerLazySingleton(() => GetExams(sl()))
+    ..registerLazySingleton(() => SubmitExam(sl()))
+    ..registerLazySingleton(() => UpdateExam(sl()))
+    ..registerLazySingleton(() => UploadExam(sl()))
+    ..registerLazySingleton(() => GetUserCourseExams(sl()))
+    ..registerLazySingleton(() => GetUserExams(sl()))
+    ..registerLazySingleton<ExamRepo>(() => ExamRepoImpl(sl()))
+    ..registerLazySingleton<ExamRemoteDataSrc>(
+      () => ExamRemoteDataSrcImpl(auth: sl(), firestore: sl()),
+    );
+}
+
+Future<void> _initMaterial() async {
+  sl
+    ..registerFactory(
+      () => MaterialCubit(
+        addMaterial: sl(),
+        getMaterials: sl(),
+      ),
+    )
+    ..registerLazySingleton(() => AddMaterial(sl()))
+    ..registerLazySingleton(() => GetMaterials(sl()))
+    ..registerLazySingleton<MaterialRepo>(() => MaterialRepoImpl(sl()))
+    ..registerLazySingleton<MaterialRemoteDataSrc>(
+      () => MaterialRemoteDataSrcImpl(
+        firestore: sl(),
+        auth: sl(),
+        storage: sl(),
+      ),
+    )
+    ..registerFactory(() => ResourceController(storage: sl(), prefs: sl()));
+}
+
+Future<void> _initVideo() async {
+  sl
+    ..registerFactory(() => VideoCubit(addVideo: sl(), getVideos: sl()))
+    ..registerLazySingleton(() => AddVideo(sl()))
+    ..registerLazySingleton(() => GetVideos(sl()))
+    ..registerLazySingleton<VideoRepo>(() => VideoRepoImpl(sl()))
+    ..registerLazySingleton<VideoRemoteDataSrc>(
+      () => VideoRemoteDataSrcImpl(firestore: sl(), auth: sl(), storage: sl()),
+    );
 }
 
 Future<void> _initCourse() async {
