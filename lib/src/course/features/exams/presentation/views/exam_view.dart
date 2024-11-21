@@ -1,7 +1,6 @@
 import 'package:education_app/core/res/colours.dart';
 import 'package:education_app/core/res/media_res.dart';
 import 'package:education_app/core/utils/core_utils.dart';
-import 'package:education_app/src/course/features/exams/data/models/user_exam_model.dart';
 import 'package:education_app/src/course/features/exams/presentation/app/cubit/exam_cubit.dart';
 import 'package:education_app/src/course/features/exams/presentation/app/providers/exam_controller.dart';
 import 'package:education_app/src/course/features/exams/presentation/widgets/exam_navigation_blob.dart';

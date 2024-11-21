@@ -51,6 +51,8 @@ dependencies:
   video_player: ^2.9.2
   step_progress_indicator: ^1.0.2
   youtube_explode_dart: ^2.3.6
+  firebase_database: ^11.1.6
+  firebase_data_connect: ^0.1.2+3
 
 dev_dependencies:
   bloc_test: ^9.1.7
